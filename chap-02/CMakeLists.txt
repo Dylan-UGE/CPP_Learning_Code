@@ -10,11 +10,6 @@ add_executable(c2-4-rectangle
 
 add_executable(c2-5-polygon
     5-polygon/main.cpp
-<<<<<<< HEAD
     5-polygon/Polygon.cpp     
     5-polygon/Polygon.h
-=======
-#     5-polygon/Polygon.cpp
-#     5-polygon/Polygon.h
->>>>>>> 75aaa8dbd1f34f6a2f482e9720405f3b103cf606
 )

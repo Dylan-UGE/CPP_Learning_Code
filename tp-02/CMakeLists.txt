@@ -4,3 +4,8 @@ add_executable(tp2-reminders
     Parsing.cpp
     Parsing.h
 )
+
+add_executable(tp2-letter_count
+    letter_count_v2.cpp
+    letter_count_v2.h
+)
