@@ -6,10 +6,17 @@
 
 using namespace std;
 
+<<<<<<< HEAD
 bool parse_params(const int argc, char** argv, string& dict_path, string& word, string& translation,
                   vector<string>& sentence) {
     for (auto i = 1; i < argc; ++i) {
         string option = argv[i];
+=======
+bool parse_params(const int argc, char** argv, string& dict_path, string& word, string& translation,
+                  vector<string>& sentence) {
+    for (auto i = 1; i < argc; ++i) {
+        string option = argv[i];
+>>>>>>> 75aaa8dbd1f34f6a2f482e9720405f3b103cf606
 
         if (option == "-d" && (i + 1) < argc) {
             dict_path = argv[++i];
@@ -67,8 +74,13 @@ void translate(const vector<string>& sentence, const vector<pair<string, string>
         for (auto word_translation : dict) {
             if (word == word_translation.first) {
                 cout << word_translation.second << " ";
+<<<<<<< HEAD
                 flag = 0;
                 break;
+=======
+                flag = 0;
+                break;
+>>>>>>> 75aaa8dbd1f34f6a2f482e9720405f3b103cf606
             }
         }
         if (flag == 1) {
