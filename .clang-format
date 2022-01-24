@@ -26,7 +26,7 @@ BraceWrapping:
   AfterClass: false
   AfterEnum: true
   AfterFunction: false
-  AfterStruct: true
+  AfterStruct: false
   AfterControlStatement: false
   BeforeCatch: true
   BeforeElse: true
