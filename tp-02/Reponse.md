@@ -19,25 +19,6 @@ voir *letter_count_v2.cpp* et *letter_count_v2.h*
 
 ## Exercice 3 - Rappels d'événements !
 
-Vous allez implémenter un petit programme permettant d'enregistrer des rappels d'événements et de déclencher ces rappels au bout d'une certaine durée.
-
-Dans un premier temps, implémentons l'horloge permettant de compter des secondes et minutes.
-
-1. Implémentez une classe `MinuteHand` (aiguille des minutes) qui contient un `int _minutes` avec son getter `get_minutes()`.\
-   Ajoutez-lui une fonction `void advance()` qui permet d'incrémenter le nombre de minutes.\
-   Ecrivez enfin le code permettant de tester votre classe et vérifiez que tout fonctionne.
-   
-2. Implémentez une classe `SecondHand` (aiguille des secondes) qui contient un `int _seconds` avec son getter `get_seconds()`.\
-   Ajoutez-lui également un attribut `MinuteHand& _min_hand`, qui vous initialiserez à partir d'un constructeur à un paramètre `SecondHand(MinuteHand&)`.
-   De la même manière que pour la classe précédente, ajoutez-lui une fonction `void advance()` qui permet d'incrémenter le nombre de secondes.
-   Lorsque celui-ci atteint 60, remettez-le à 0 et avancez l'aiguille des minutes.\
-   Modifiez votre code de test afin de vérifier que votre classe `SecondHand` fonctionne correctement.
-   
-3. Définissez une classe `Clock` qui contient un attribut de type `SecondHand` et un attribut de type `MinuteHand`.\
-   Implémentez son constructeur et testez que le programme compile correctement.
-   
-4. Ajoutez ensuite une fonction `void tick()`, dont le but sera de faire avancer le temps d'une seconde.\
-   Implémentez ensuite un opérateur de flux (`operator<<`) afin d'afficher l'heure au format `x min y sec` et vérifiez que si vous appeler 63x `tick()`, vous obtenez bien `1 min 3 sec`.
    
 Maintenant, on veut utiliser cette horloge pour déclencher des rappels d'événements. Ces événements sont passés en arguments du programme de la manière suivante :
 ```shell
