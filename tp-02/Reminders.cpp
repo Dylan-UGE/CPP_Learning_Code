@@ -1,4 +1,7 @@
+#include "Clock.h"
+#include "MinuteHand.h"
 #include "Parsing.h"
+#include "SecondHand.h"
 
 #include <chrono>
 #include <thread>
@@ -9,9 +12,15 @@
 int main(int argc, char** argv) {
     const auto events = parse_events(argc, argv);
 
+    MinuteHand min_hand;
+    SecondHand sec_hand(min_hand);
+    Clock      clock(sec_hand, min_hand);
+
+    clock.assign_events(events);
+
     const auto program_duration = 15;
     for (int i = 0; i < program_duration; ++i) {
-        // clock.tick();
+        clock.tick();
         std::this_thread::sleep_for(std::chrono::seconds(1));
     }
 

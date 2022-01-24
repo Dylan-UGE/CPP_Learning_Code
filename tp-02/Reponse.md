@@ -19,28 +19,7 @@ voir *letter_count_v2.cpp* et *letter_count_v2.h*
 
 ## Exercice 3 - Rappels d'événements !
 
-   
-Maintenant, on veut utiliser cette horloge pour déclencher des rappels d'événements. Ces événements sont passés en arguments du programme de la manière suivante :
-```shell
-./reminders "8:05 Il faut se lever" "21:59 Il faut envoyer le questionnaire du cours"
-```
-
-5. Prenez connaissance de l'implémentation de la classe `Event` qui contient un message à afficher
-   ansi qu'un `Time` (`std::pair` de deux entiers) indiquant le temps (en secondes et minutes) à laquelle la notification doit apparaitre.
-   Rajoutez une fonction membre `notify_time(int current_min, int current_sec)` à la classe `Event` qui,
-   si le moment du rappel est arrivé, imprime dans la console le message de l'événement et renvoie `true`, autrement, elle renvoie `false`.
-   
-6. Ajoutez à la classe `Clock` un attribut `std::vector<Event> _events` qui contient tous les événements à traiter.
-   Implémentez une fonction `add_event(const Event&)` qui rajoute un événement donné à `_events`.\
-   Dans le `main`, utilisez la fonction `parse_events` déjà implémentée pour ajouter les événements dans votre horloge.
-   
-7. Dans la fonction `Clock::tick`, appelez `notify_time` sur tous les événements contenus dans `_events`.\
-   Si la fonction renvoie `true`, arrangez-vous pour retirer l'événement du tableau.
-   
-Testez votre nouveau système de notifications !
-
-8. **Bonus** Pourquoi `std::vector` n'est-il pas le meilleur conteneur pour stocker les événements ?
-   En recherchant sur https://en.cppreference.com/w/cpp/container, proposez une nouvelle implémentation qui s'avérerait plus efficace.
+voir *Event.cpp*, *MinuteHand.cpp*, *SecondHand.cpp*, *Clock.cpp*, *Parsing.cpp* et *Reminders.cpp*
 
 ---
 

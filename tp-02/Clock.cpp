@@ -7,20 +7,27 @@ Clock::Clock(SecondHand& sec_hand, MinuteHand& min_hand)
 
 void Clock::tick() {
     _sec_hand.advance();
+
+    for (auto it = _events.begin(); it != _events.end();) {
+        Event& event = *it;
+
+        if (event.notify_time(_min_hand.get_minutes(), _sec_hand.get_seconds())) {
+            it = _events.erase(it);
+        }
+        else {
+            ++it;
+        }
+    }
+}
+
+void Clock::add_event(const Event& event) {
+    _events.emplace_back(event);
+}
+
+void Clock::assign_events(const std::vector<Event>& events) {
+    _events = events;
 }
 
 std::ostream& operator<<(std::ostream& stream, const Clock& clock) {
     return stream << clock._min_hand.get_minutes() << " min " << clock._sec_hand.get_seconds() << " sec";
-}
-
-int main() {
-    MinuteHand t;
-    SecondHand t2(t);
-
-    Clock test(t2, t);
-    std::cout << test << std::endl;
-    for (auto i = 0; i != 63; i++) {
-        test.tick();
-    }
-    std::cout << test << std::endl;
 }
