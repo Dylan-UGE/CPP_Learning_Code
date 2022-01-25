@@ -8,8 +8,8 @@ private:
     std::string _name;
 
 public:
-    Pokemon(std::string name)
+    Pokemon(const std::string& name)
         : _name { name } {}
 
-    const std::string& name() const { return _name; }
+    std::string name() const { return _name; }
 };

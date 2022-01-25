@@ -10,9 +10,9 @@
 // ownership.
 class PC {
 public:
-    const std::vector<std::unique_ptr<Pokemon>>& pokemons() const { return _pc; }
-    void receive(std::unique_ptr<Pokemon> pokemon) { _pc.emplace_back(std::move(pokemon)); }
+    const std::vector<std::unique_ptr<Pokemon>>& pokemons() const { return _pokemons; }
+    void receive(std::unique_ptr<Pokemon> pokemon) { _pokemons.emplace_back(std::move(pokemon)); }
 
 private:
-    std::vector<std::unique_ptr<Pokemon>> _pc;
+    std::vector<std::unique_ptr<Pokemon>> _pokemons;
 };

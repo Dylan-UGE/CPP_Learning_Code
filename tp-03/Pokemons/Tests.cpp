@@ -47,20 +47,19 @@ TEST_CASE("A Pokemon can be put inside the poke center") {
     auto pikachu = std::make_unique<Pokemon>("Pikachu");
     pc.receive(std::move(pikachu));
 
-    //     const auto& pokemons = pc.pokemons();
-    //     REQUIRE(pokemons.empty() == false);
-    //     REQUIRE(pokemons[0]->name() == "Pikachu");
+    const auto& pokemons = pc.pokemons();
+    REQUIRE(pokemons.empty() == false);
+    REQUIRE(pokemons[0]->name() == "Pikachu");
 }
 
-// TEST_CASE("Trainers are constructed with their name and they know the PC where their Pokemons get sent")
-// {
-//     PC      pc;
-//     Trainer sacha { "Sacha", pc };
-//     Trainer ondine { "Ondine", pc };
+TEST_CASE("Trainers are constructed with their name and they know the PC where their Pokemons get sent") {
+    PC      pc;
+    Trainer sacha { "Sacha", pc };
+    //     Trainer ondine { "Ondine", pc };
 
-//     REQUIRE(sacha.name() == "Sacha");
-//     REQUIRE(ondine.name() == "Ondine");
-// }
+    //     REQUIRE(sacha.name() == "Sacha");
+    //     REQUIRE(ondine.name() == "Ondine");
+}
 
 // TEST_CASE("Trainers start with 6 empty pokeballs")
 // {
