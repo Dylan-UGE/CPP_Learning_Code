@@ -52,8 +52,7 @@ TEST_CASE("A Pokemon can be put inside the poke center") {
     //     REQUIRE(pokemons[0]->name() == "Pikachu");
 }
 
-// TEST_CASE("Trainers are constructed with their name and they know the poke center that they are associated
-// with")
+// TEST_CASE("Trainers are constructed with their name and they know the PC where their Pokemons get sent")
 // {
 //     PC      pc;
 //     Trainer sacha { "Sacha", pc };
