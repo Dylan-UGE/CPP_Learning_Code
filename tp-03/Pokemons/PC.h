@@ -13,6 +13,8 @@ public:
     const std::vector<std::unique_ptr<Pokemon>>& pokemons() const { return _pokemons; }
     void receive(std::unique_ptr<Pokemon> pokemon) { _pokemons.emplace_back(std::move(pokemon)); }
 
+    void give_back(Trainer& trainer, const std::string& give_back_name);
+
 private:
     std::vector<std::unique_ptr<Pokemon>> _pokemons;
 };
