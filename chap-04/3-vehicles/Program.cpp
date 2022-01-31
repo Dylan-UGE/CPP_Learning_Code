@@ -4,8 +4,7 @@
 
 #include <iostream>
 
-int main()
-{
+int main() {
     Driver     car_driver;
     Car        car { car_driver, 60u };
     const auto distance_in_car = car.drive();

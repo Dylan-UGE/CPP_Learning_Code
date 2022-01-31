@@ -1,7 +1,6 @@
 #pragma once
 
-enum class Rank
-{
+enum class Rank {
     TopManagement,
     Default,
     Slave,

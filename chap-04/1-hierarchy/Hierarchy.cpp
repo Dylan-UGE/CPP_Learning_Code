@@ -4,15 +4,13 @@
 
 #include <cstdio>
 
-void day_summary(const Staff& staff, const Intern& intern)
-{
+void day_summary(const Staff& staff, const Intern& intern) {
     std::printf("At the end of day, %s completed %u tasks out of %u, and %s broke %u cups.\n\n",
                 staff.get_name().c_str(), staff.get_done_tasks(), staff.get_assigned_tasks(),
                 intern.get_name().c_str(), intern.get_nb_broken_cups());
 }
 
-void at_apple()
-{
+void at_apple() {
     constexpr auto is_nice = true;
     Boss           steeve { "Steve", "Jobs", 1'000'000u, is_nice };
 
@@ -32,8 +30,7 @@ void at_apple()
     day_summary(laura, bob);
 }
 
-void at_army()
-{
+void at_army() {
     constexpr auto is_nice = false;
     Boss           caporal { "Caporal", "McBerdy", 3'800u, is_nice };
 
@@ -59,8 +56,7 @@ void at_army()
     day_summary(michael, bob);
 }
 
-int main()
-{
+int main() {
     at_apple();
     at_army();
 
