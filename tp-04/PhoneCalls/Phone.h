@@ -2,15 +2,14 @@
 
 #include "Person.h"
 
-class Phone
-{
+class Phone {
 public:
-    Phone(const Person& owner)
-        : _owner { owner }
-    {}
+    virtual void ring() const = 0;
 
-    void ring() const { _owner.answer_phone(); }
-
-private:
+protected:
     const Person& _owner;
+
+    Phone(const Person& owner)
+        : _owner { owner } {}
+    virtual ~Phone() {}
 };

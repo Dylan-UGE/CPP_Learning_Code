@@ -2,8 +2,7 @@
 #include <cmath>
 #include <ostream>
 
-class Point
-{
+class Point {
 public:
     float x, y;
 
@@ -24,8 +23,7 @@ public:
     Point& operator*=(const float scale) { return *this = *this * scale; }
     void   normalize(const float target_length = 1.0f) { *this = normalized(target_length); }
 
-    friend std::ostream& operator<<(std::ostream& os, const Point& p)
-    {
+    friend std::ostream& operator<<(std::ostream& os, const Point& p) {
         return os << '(' << p.x << ',' << p.y << ')';
     }
 };
